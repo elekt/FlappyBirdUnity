@@ -14,7 +14,6 @@ public class RepeatingBackground : MonoBehaviour {
     }
 	
 	void Update () {
-        Debug.Log(gameObject.transform.position.x);
         if(gameObject.transform.position.x >= groundHorizontalLength) {
             float y = gameObject.transform.position.y;
             gameObject.transform.position = new Vector2(-groundHorizontalLength+0.1f, y);

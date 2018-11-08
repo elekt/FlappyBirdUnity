@@ -31,4 +31,9 @@ public class PlayerController : MonoBehaviour {
         animator.SetTrigger("Die");
         GameController.instance.BirdDied();
     }
+
+    void OnTriggerEnter2D(Collider2D other) 
+    {
+        GameController.instance.BirdScored();
+    }
 }

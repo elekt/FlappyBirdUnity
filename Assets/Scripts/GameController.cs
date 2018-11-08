@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
@@ -9,6 +10,9 @@ public class GameController : MonoBehaviour {
     public GameObject gameOverText;
     public bool gameOver = false;
     public float scrollSpeed = 1.5f;
+
+    int score = 0;
+    public Text scoreText; 
 
     void Awake() 
     {
@@ -38,9 +42,19 @@ public class GameController : MonoBehaviour {
             return;
         }
 
-        scored++;
+        score++;
+        UpdateScore();
+    }
 
+    void Start() 
+    {
+        score = 0;
+        UpdateScore();
+    }
 
+    void UpdateScore() 
+    {
+        scoreText.text = "Score: " + score;
     }
 	
 }
